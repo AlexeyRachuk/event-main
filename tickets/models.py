@@ -43,7 +43,7 @@ class BenefitIcon(models.Model):
 
 # Примещуства билета
 class TicketBenefit(models.Model):
-    ticket_benefit_icon = models.ForeignKey(BenefitIcon, on_delete=models.CASCADE,
+    ticket_benefit_icon = models.ForeignKey(BenefitIcon, on_delete=models.CASCADE, verbose_name='ticket_benefit_icon',
                                             name='Иконка приемущества')
     ticket_benefit_title = models.CharField('Название приемущества', max_length=50)
     ticket_benefit_order = models.SmallIntegerField('Порядок', default=0)
