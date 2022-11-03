@@ -1,0 +1,20 @@
+{% for schedule in schedule_all %}
+{% load tags %}
+<section class="schedule section-padding" id="section_4">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12 col-12">
+                <h2 class="mb-5 text-center">{{ schedule.title }}</u></h2>
+
+
+                {% get_schedule_days %}
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endfor %}

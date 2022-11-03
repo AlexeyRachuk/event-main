@@ -1,0 +1,74 @@
+{% load tags %}
+<nav>
+    <div class="nav nav-tabs align-items-baseline" id="nav-tab" role="tablist">
+        {% for schedule_days in schedule_days_all %}
+        <button {% if item.current %} class='nav-link active' {% else %} class='nav-link' {% endif %}
+                id="{{ schedule_days.id_schedule }}" data-bs-toggle="tab"
+                data-bs-target="#{{ schedule_days.id_schedule }}" type="button" role="tab" aria-selected="true">
+            <h3>
+                <span>{{ schedule_days.title_schedule }}</span>
+                <small>{{ schedule_days.date_schedule }}</small>
+            </h3>
+        </button>
+        {% endfor %}
+    </div>
+</nav>
+
+{% for schedule_days in schedule_days_all %}
+<div class="tab-content mt-5" id="{{ schedule_days.id_schedule }}">
+
+    <div class='tab-pane fade show active' id="{{ schedule_days.id_schedule }}" role="tabpanel">
+
+{% for schedule_item in schedule_days.id_schedule_item.all %}
+
+    {% for schedule_item in schedule_item_all %}
+
+
+
+
+        <div class="row border-bottom pb-5 mb-5">
+            <div class="col-lg-4 col-12">
+                <img src="{{ schedule_item.photo.url }}"
+                     class="schedule-image img-fluid" alt="">
+            </div>
+
+            <div class="col-lg-8 col-12 mt-3 mt-lg-0">
+
+                <h4 class="mb-2">{{ schedule_item.title }}</h4>
+
+                {{ schedule_item.decsr | safe }}
+                <div class="d-flex align-items-center mt-4">
+                    {% if schedule_item.speaker %}
+                    <div class="avatar-group d-flex">
+                        <img src="{{ schedule_item.speaker.speakers_photo.url }}"
+                             class="img-fluid avatar-image" alt="">
+
+                        <div class="ms-3">
+                            {{ schedule_item.speaker.speakers_title }}
+                            <p class="speakers-text mb-0">{{ schedule_item.speaker.speakers_descr }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+
+
+                    <span class="mx-3 mx-lg-5">
+                                                    <i class="bi-clock me-2"></i>
+                                                    {{ schedule_item.time_begin }}—{{ schedule_item.time_end }}
+                                                </span>
+
+                    <span class="mx-1 mx-lg-5">
+                                                    <i class="bi-layout-sidebar me-2"></i>
+                                                    {{ schedule_item.place }}
+                                                </span>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    {% endfor %}
+    {% endfor %}
+
+</div>
+{% endfor %}
+

@@ -1,0 +1,20 @@
+{% for speakers_block in speakers_block_all %}
+{% load tags %}
+<section class="speakers section-padding" id="section_3">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center">
+                    <div class="speakers-text-info">
+                        <h2 class="mb-4">{{ speakers_block.title }}</u></h2>
+
+                        {{ speakers_block.descr | safe }}
+                    </div>
+                </div>
+
+                {% get_speakers_items %}
+
+            </div>
+        </div>
+    </section>
+{% endfor %}

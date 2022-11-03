@@ -1,0 +1,19 @@
+{% for bottom_banner in bottom_banner_all %}
+<section class="call-to-action section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-7 col-12">
+                    <h2 class="text-white mb-4">{{ bottom_banner.bottom_banner_title }}</h2>
+
+                    <p class="text-white">{{ bottom_banner.bottom_banner_descr }}</p>
+                </div>
+
+                <div class="col-lg-3 col-12 ms-lg-auto mt-4 mt-lg-0">
+                    <a href="{{ bottom_banner.bottom_banner_button_url }}" class="custom-btn btn">{{ bottom_banner.bottom_banner_button }}</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endfor %}

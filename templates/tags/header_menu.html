@@ -1,0 +1,9 @@
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+        {% for header_menu in header_menu_all %}
+        <li class="nav-item">
+            <a class="nav-link click-scroll" href="{{ header_menu.menu_url }}">{{ header_menu.menu_title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <div>

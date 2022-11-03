@@ -1,0 +1,47 @@
+{% for place in place_all %}
+<section class="venue section-padding" id="section_6">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12 col-12">
+                    <h2 class="mb-5">{{ place.main_place_block_title }}</u></h2>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    {{ place.main_place_map | safe }}
+                </div>
+
+                <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                    <div class="venue-thumb bg-white shadow-lg">
+
+                        <div class="venue-info-title">
+                            <h2 class="text-white mb-0">{{ place.main_place_title }}</h2>
+                        </div>
+
+                        <div class="venue-info-body">
+                            <h4 class="d-flex">
+                                <i class="bi-geo-alt me-2"></i>
+                                <span>{{ place.main_place_address }}</span>
+                            </h4>
+
+                            <h5 class="mt-4 mb-3">
+                                <a href="mailto:{{ place.main_place_email }}">
+                                    <i class="bi-envelope me-2"></i>
+                                    {{ place.main_place_email }}
+                                </a>
+                            </h5>
+
+                            <h5 class="mb-0">
+                                <a href="tel:{{ place.main_place_phone }}">
+                                    <i class="bi-telephone me-2"></i>
+                                    {{ place.main_place_phone }}
+                                </a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endfor %}

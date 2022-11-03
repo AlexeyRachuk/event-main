@@ -1,0 +1,32 @@
+{% for about_block in about_block_all %}
+<section class="about section-padding" id="section_2">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-10 col-12">
+                <h2 class="mb-4">{{ about_block.about_title }}</u></h2>
+            </div>
+
+            <div class="col-lg-6 col-12">
+
+                {{ about_block.about_text_left | safe}}
+
+                <br>
+
+                <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3" href="{{ about_block.about_button_one_url}}">{{ about_block.about_button_one_title }}</a>
+
+                <a class="custom-btn btn custom-link mt-3" href="{{ about_block.about_button_two_url }}">{{ about_block.about_button_two_title}}</a>
+            </div>
+
+            <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                {{ about_block.about_text_right | safe}}
+                <hr>
+
+                <p class="d-inline">{{ about_block.about_text_underline | safe}}</p>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</section>
+{% endfor %}

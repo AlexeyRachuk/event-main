@@ -1,0 +1,23 @@
+   <section class="highlight">
+                <div class="container">
+                    <div class="row">
+
+                        {% for banner_video in banner_video_all %}
+
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="highlight-thumb">
+                                <img src="{{ banner_video.video_prew.url }}" class="highlight-image img-fluid" alt="">
+
+                                <div class="highlight-info">
+                                    <h3 class="highlight-title">{{ banner_video.video_title }}</h3>
+
+                                    <a href="{{ banner_video.video_url }}" class="bi-youtube highlight-icon"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </section>

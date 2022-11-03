@@ -1,0 +1,7 @@
+<div class="col-lg-7 col-12">
+    <ul class="footer-menu d-flex flex-wrap">
+        {% for footer_menu in footer_menu_all %}
+        <li class="footer-menu-item"><a href="{{ footer_menu.menu_url }}" class="footer-menu-link">{{ footer_menu.menu_title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

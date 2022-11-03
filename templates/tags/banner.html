@@ -1,0 +1,28 @@
+{% for banner in banner_all %}
+<section class="hero" id="section_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-12 m-auto">
+                <div class="hero-text">
+
+                    <h1 class="text-white mb-4"><u class="text-info">{{ banner.banner_title_one }}</u><br>{{ banner.banner_title_two }}</h1>
+
+                    <div class="d-flex justify-content-center align-items-center">
+                        <span class="date-text">{{ banner.banner_date }}</span>
+
+                        <span class="location-text">{{ banner.banner_plase }}</span>
+                    </div>
+
+                    <a href="#section_2" class="custom-link bi-arrow-down arrow-icon"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-wrap">
+        <video autoplay="" loop="" muted="" class="custom-video" poster="">
+            <source src="{{ banner.banner_movie.url }}" type="video/mp4">
+        </video>
+    </div>
+</section>
+{% endfor %}
