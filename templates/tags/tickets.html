@@ -20,7 +20,7 @@
                     <div class="pricing-body">
                         {% for tickets_benefit in tickets.id_ticket_benefit.all %}
                         <p>
-                            <i class="{{ tickets_benefit.ticket_benefit_icon.icon_class }}"></i>{{ tickets_benefit.ticket_benefit_title }}
+                            <i class="{{ tickets_benefit.ticket_benefit_icon.icon_title }}"></i>{{ tickets_benefit.ticket_benefit_title }}
                         </p>
                         {% endfor %}
 

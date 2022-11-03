@@ -44,7 +44,7 @@ class BenefitIcon(models.Model):
 # Примещуства билета
 class TicketBenefit(models.Model):
     ticket_benefit_icon = models.ForeignKey(BenefitIcon, on_delete=models.CASCADE, verbose_name='ticket_benefit_icon',
-                                            name='Иконка приемущества')
+                                            name='Иконка приемущества', null=True)
     ticket_benefit_title = models.CharField('Название приемущества', max_length=50)
     ticket_benefit_order = models.SmallIntegerField('Порядок', default=0)
     ticket_benefit_draft = models.BooleanField('Публикация', default=True)
