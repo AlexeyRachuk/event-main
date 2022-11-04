@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'tickets',
     'ckeditor',
     'ckeditor_uploader',
+    'form',
 ]
 
 MIDDLEWARE = [
